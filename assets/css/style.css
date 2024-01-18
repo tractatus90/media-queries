@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: navbar;
+  background-color: #36413e;
+  color: #fafaff;
+  padding: 10px;
+}
+
+h1 {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 20px;
+}
+.nav-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #5d5e60;
+  color: #fafaff;
+  font-family: "Open sans";
+  grid-area: dropdown;
+}
+
+@media (max-width: 576px) {
+  body {
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+    padding: 10px;
+    grid-template-areas:
+      "navbar"
+      "dropdown"
+      "main"
+      "footer";
+  }
+
+  .main-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    place-items: center;
+    margin: 5px 0 5px 0;
+  }
+}
+
+@media (min-width: 776px) {
+  body {
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-areas:
+      "navbar dropdown"
+      "navbar main"
+      "navbar footer";
+  }
+  .nav-left {
+    display: none;
+  }
+
+  .nav-right {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo h1 {
+    font-size: 36px;
+    padding-left: 5px;
+    font-weight: 700;
+  }
+
+  .menu {
+    font-family: "Open sans";
+    font-size: 30px;
+  }
+
+  .dropdown {
+    font-size: 30px;
+  }
+
+  .main-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    place-items: center;
+    margin: 5px 0 5px 0;
+  }
+}
+
+.cards {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 10px 5px 5px #5d5e60;
+  padding: 15px;
+  font-family: "Roboto";
+  border: solid 1px black;
+}
+
+.cards img {
+  width: 100%;
+}
+
+.main {
+  grid-area: main;
+}
+
+.main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-button a {
+  text-decoration: none;
+  color: inherit;
+  padding: 3px;
+  border: solid 1px #13131392;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #36413e;
+  color: #fafaff;
+  font-family: "Roboto";
+  padding: 15px;
+}
